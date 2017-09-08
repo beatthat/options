@@ -1,0 +1,34 @@
+{
+  "name": "options",
+  "scope": "ape",
+  "version": "0.0.1",
+  "description": "Options provide a mechanism for an API to define (a set of) explicit options that can be passed via IDictionary<string, object>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beatthat/unity-panel-interfaces.git"
+  },
+  "files": [
+    "index.js",
+    "scripts",
+    "src"
+  ],
+  "author": "larrykirschner@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/beatthat/unity-panel-interfaces/issues"
+  },
+  "homepage": "https://github.com/beatthat/unity-panel-interfaces",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "install:test": "rm -f *.tgz && npm pack && cd test && npm run clean && npm install",
+    "clean": "rm -f *.tgz && cd test && npm run clean",
+    "sync:test2src": "rsync -rv --include '*/' --include '*.cs' --exclude '*' --prune-empty-dirs test/Assets/Plugins/${npm_package_scope}/${npm_package_name}/ ./src/${npm_package_name}/",
+    "env": "env"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
+    "convert-type-ext": "github:beatthat/convert-type-ext#semver:^0.0.1"
+  }
+}
