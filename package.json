@@ -1,7 +1,7 @@
 {
   "name": "options",
   "scope": "beatthat",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Options provide a mechanism for an API to define (a set of) explicit options that can be passed via IDictionary<string, object>",
   "main": "index.js",
   "repository": {
